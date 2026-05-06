@@ -11,16 +11,40 @@ struct Employee
 
 int main()
 {
-    struct Employee emp1;
-    emp1.number = 3465;
-    strcpy(emp1.name, "Jones");
-    emp1.rate = 4.62;
-    emp1.hours = 40;
+    struct Employee emp[3];
+    int i;
+    printf("Enter details for 6 employees:\n");
+    for (i = 0; i < 3; i++)
+    {
+        printf("Employee %d:\n", i + 1);
+        printf("Enter employee number: ");
 
-    printf("Employee Number: %d\n", emp1.number);
-    printf("Employee Name: %s\n", emp1.name);
-    printf("Hourly Rate: %.2f\n", emp1.rate);
-    printf("Hours Worked: %d\n", emp1.hours);
+        scanf("%d", &emp[i].number);
+        printf("Enter employee name: ");
+
+        scanf("%s", emp[i].name);
+        printf("Enter hourly rate: ");
+        scanf("%f", &emp[i].rate);
+
+        printf("Enter hours worked: ");
+        scanf("%d", &emp[i].hours);
+
+        printf("\nEmployee details:\n");
+        printf("----------------------\n");
+    }
+
+    printf("\n Number \t Name \t\t Hourly Rate \t Hours Worked\n");
+    printf("-------------------------------------------------------------\n");
+    for (i = 0; i < 3; i++)
+    {
+        printf("%d \t\t %s\t\t %.2f \t\t %d\n", 
+            emp[i].number, 
+            emp[i].name, 
+            emp[i].rate, 
+            emp[i].hours);
+    }
+
+    
 
     return 0;
 }  
